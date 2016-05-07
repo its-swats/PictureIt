@@ -4,7 +4,14 @@ class MainController < ApplicationController
 	end
 
 	def create
-		p params
+		@photo = Photo.create(photo_params)	
 		redirect_to '/'
 	end
+
+	private
+
+	def photo_params
+		params.require(:photo).permit(:caption, :image)
+	end
+
 end
