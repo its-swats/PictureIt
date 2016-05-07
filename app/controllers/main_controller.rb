@@ -5,7 +5,9 @@ class MainController < ApplicationController
 	end
 
 	def create
-		@photo = Photo.create(photo_params)	
+		@photo = Photo.new(photo_params)	
+		@photo.ip = request.remote_ip
+		@photo.save
 		redirect_to '/'
 	end
 
@@ -16,3 +18,6 @@ class MainController < ApplicationController
 	end
 
 end
+
+
+
