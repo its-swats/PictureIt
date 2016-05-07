@@ -12,10 +12,18 @@ class MainController < ApplicationController
 	end
 
 	def keep
+		@vote = Vote.new
+		@vote.vote = true
+		@vote.ip = request.remote_ip
+		@vote.save
 		redirect_to '/'
 	end
 
 	def kill
+		@vote = Vote.new
+		@vote.vote = false
+		@vote.ip = request.remote_ip
+		@vote.save
 		redirect_to '/'
 	end
 
@@ -24,7 +32,6 @@ class MainController < ApplicationController
 	def photo_params
 		params.require(:photo).permit(:caption, :image)
 	end
-
 end
 
 
