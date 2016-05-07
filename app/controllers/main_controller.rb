@@ -7,7 +7,6 @@ class MainController < ApplicationController
 	def create
 		@photo = Photo.new(photo_params)	
 		p request.remote_ip
-		p fwd
 		# @photo.ip = request.remote_ip
 		@photo.save
 		redirect_to '/'
