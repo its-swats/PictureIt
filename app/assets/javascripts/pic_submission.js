@@ -3,24 +3,24 @@
 
 
 
-$(document).ready(function(){
-	var takePicture = $('#upload-file');
-		takePicture.change(function(event) {
-	});
-	submitPhotoHandler();
+// $(document).ready(function(){
+// 	var takePicture = $('#upload-file');
+// 		takePicture.change(function(event) {
+// 	});
+// 	submitPhotoHandler();
 	
-});
+// });
 
 
-function submitPhotoHandler(){
-	$('#photoSubmission').submit(function(event){
-		event.preventDefault();
-		caption = $("input[name='caption'").val();
-		photo = $('#upload-file')[0].files[0];
-		var response = $.ajax({
-			method: 'POST',
-			url: '/',
-			data: {'caption': caption, 'photo': photo}
-		});
-	})
-};
+// function submitPhotoHandler(){
+// 	$('#photoSubmission').submit(function(event){
+// 		event.preventDefault();
+// 		caption = $("input[name='caption'").val();
+// 		photo = $('#upload-file')[0].files[0];
+// 		var response = $.ajax({
+// 			method: 'POST',
+// 			url: '/',
+// 			data: {'caption': caption, 'photo': photo}
+// 		});
+// 	})
+// };

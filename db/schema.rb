@@ -18,9 +18,7 @@ ActiveRecord::Schema.define(version: 20160507194516) do
 
   create_table "photos", force: :cascade do |t|
     t.string   "caption"
-    t.string   "filename"
-    t.binary   "data"
-    t.string   "mime_type"
+    t.string   "image"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
