@@ -1,6 +1,7 @@
 class MainController < ApplicationController
 	def index
 		@image = Photo.new
+		@current_image = Photo.last
 	end
 
 	def create

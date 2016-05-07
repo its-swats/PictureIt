@@ -1,20 +1,25 @@
-<!-- <nav class="main-header navbar navbar-light bg-faded navbar-fixed-top">
-  <div class="nav navbar-nav">
-    <form id='photoSubmission' class="form-inline">
-      <label for='upload-file' class='btn btn-block btn-primary form-control'>Picture It</label>
-      <input class='form-control form-control-lg' type='text' name='caption' placeholder='Caption It'>
-      <input class='form-control' type='submit' value='Post It'>
-      <input id='upload_file' type='file' accept='image/*' name='file' capture='camera'> 
-    </form>
-  </div>
-</nav> -->
 <nav class="main-header navbar navbar-light bg-faded navbar-fixed-top">
   <div class="nav navbar-nav">
 		<%= form_for @image, :url => root_path, html: {multipart: true, class: 'form-inline'} do |f| %>
-			<%= f.label :image, 'Picture It', {for: 'upload_file', class: "btn btn-block btn-primary form-control"} %>
+			<div class='button-box btn-group btn-group-lg' role='group'>
+				<%= f.label :image, 'Picture It', {for: 'upload_file', class: "picture btn btn-primary"} %>
+				<%= f.submit :image, {class: 'post btn btn-primary', value: 'Post It'} %>
+			</div>
 			<%= f.text_field :caption, {class: 'form-control form-control-lg', placeholder: 'Caption It' } %>
-			<%= f.submit :image, {class: 'form-control', value: 'Post It'} %>
 			<%= f.file_field :image, {id: 'upload_file', accept: 'image/*', capture: 'camera'}%>
+			</div>
 		<% end %>
 	</div>
 </nav>
+
+
+<!-- <nav class="main-footer navbar navbar-light bg-faded navbar-fixed-bottom">
+  <div class="nav navbar-nav">
+    <form class="form-inline">
+    	<div class='button-box btn-group btn-group-lg' role='group'>
+	      <button class='keep btn btn-primary'>Keep It</button>
+	      <button class='kill btn btn-danger'>Kill It</button>
+      </div>
+    </form>
+  </div>
+</nav> -->

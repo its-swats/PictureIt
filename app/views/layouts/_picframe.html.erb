@@ -1,5 +1,7 @@
 <div class='main'>
-	<p id='picFrame'>
-	Pic Here
-	</p>
+	<div id='picFrame'>
+		<% if @current_image %>
+			<%= image_tag @current_image.image %>
+		<%end%>
+	</div>
 </div>
