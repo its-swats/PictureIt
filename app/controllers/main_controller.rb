@@ -11,6 +11,14 @@ class MainController < ApplicationController
 		redirect_to '/'
 	end
 
+	def keep
+		redirect_to '/'
+	end
+
+	def kill
+		redirect_to '/'
+	end
+
 	private
 
 	def photo_params

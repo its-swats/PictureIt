@@ -1,10 +1,8 @@
 <nav class="main-footer navbar navbar-light bg-faded navbar-fixed-bottom">
   <div class="nav navbar-nav">
-    <form class="form-inline">
     	<div class='button-box btn-group btn-group-lg' role='group'>
-	      <button class='keep btn btn-primary'>Keep It</button>
-	      <button class='kill btn btn-danger'>Kill It</button>
+	      <%= link_to "Keep It", up_path, class: 'keep btn btn-primary' %>
+	      <%= link_to "Kill It", down_path, class: 'kill btn btn-danger' %>
       </div>
-    </form>
   </div>
 </nav>
