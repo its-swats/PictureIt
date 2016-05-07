@@ -8,6 +8,17 @@ class MainController < ApplicationController
 		@photo = Photo.new(photo_params)	
 		@photo.ip = request.remote_ip
 		@photo.save
+		Vote.clear_votes
+		redirect_to '/'
+	end
+
+	def keep
+		Vote.place_vote(true, request.remote_ip)
+		redirect_to '/'
+	end
+
+	def kill
+		Vote.place_vote(false, request.remote_ip)
 		redirect_to '/'
 	end
 
@@ -16,7 +27,6 @@ class MainController < ApplicationController
 	def photo_params
 		params.require(:photo).permit(:caption, :image)
 	end
-
 end
 
 
