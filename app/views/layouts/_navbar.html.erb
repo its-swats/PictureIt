@@ -3,9 +3,9 @@
 		<%= form_for @image, :url => root_path, html: {multipart: true, class: 'form-inline'} do |f| %>
 			<div class='button-box btn-group btn-group-lg' role='group'>
 				<%= f.label :image, 'Picture It', {for: 'upload_file', class: "picture btn btn-primary"} %>
-				<%= f.submit :image, {class: 'post btn btn-primary', value: 'Post It'} %>
+				<%= f.submit :image, {class: 'disabled post btn btn-primary', value: 'Post It', data: {disable_with: "Posting It", disabled: true}} %>
 			</div>
-			<%= f.text_field :caption, {class: 'form-control form-control-lg', placeholder: 'Caption It' } %>
+			<%= f.text_field :caption, {class: 'form-control form-control-lg disabled', placeholder: 'Caption It' } %>
 			<%= f.file_field :image, {id: 'upload_file', accept: 'image/*', capture: 'camera'}%>
 		<% end %>
 	</div>

@@ -3,13 +3,13 @@
 
 
 
-// $(document).ready(function(){
-// 	var takePicture = $('#upload-file');
-// 		takePicture.change(function(event) {
-// 	});
-// 	submitPhotoHandler();
+$(document).ready(function(){
+	var takePicture = $('#upload-file');
+	takePicture.change(function(event) {
+	});
 	
-// });
+	
+});
 
 
 // function submitPhotoHandler(){

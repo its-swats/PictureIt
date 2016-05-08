@@ -1,8 +1,8 @@
 <nav class="main-footer navbar navbar-light bg-faded navbar-fixed-bottom">
   <div class="nav navbar-nav">
     	<div class='button-box btn-group btn-group-lg' role='group'>
-	      <%= link_to "Keep It", up_path, class: "keep btn btn-primary #{'disabled' if @voted}", method: 'post'%>
-	      <%= link_to "Kill It", down_path, class: "kill btn btn-danger #{'disabled' if @voted}", method: 'post' %>
+	      <%= link_to "Keep It", up_path, class: "keep btn btn-primary #{'disabled' if @voted}", method: 'post', data: {disable_with: "Keeping It"}%>
+	      <%= link_to "Kill It", down_path, class: "kill btn btn-danger #{'disabled' if @voted}", method: 'post', data: {disable_with: "Killing It"} %>
       </div>
   </div>
 </nav>
