@@ -8,7 +8,9 @@ $(document).ready(function(){
 
 	takePicture.change(function(event) {
 		$('#post_button').removeClass('disabled');
-		$('#caption_box').attr('placeholder', 'Caption It!')
+		$('#caption_box').attr('placeholder', 'Caption It!');
+		$('#caption_box').removeClass('no_display');
+		$('#caption_box').addClass('yes_display');
 	});
 });
 
