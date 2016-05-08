@@ -4,11 +4,13 @@
 
 
 $(document).ready(function(){
-	var takePicture = $('#upload-file');
+	var takePicture = $('#upload_file');
+
 	takePicture.change(function(event) {
+		console.log('hit')
+		$('#post_button').removeClass('disabled');
+		$('#caption_box').toggle();
 	});
-	
-	
 });
 
 
