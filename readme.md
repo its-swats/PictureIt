@@ -12,9 +12,9 @@ Upload pictures to PictureIt directly from your phone's browser for all users to
 ##Usage
 PictureIt is currently only designed to work on Phones and Tablets. While it can be accessed on desktop, the UI does not yet support it and the experience will be suboptimal. A full fledged desktop and landscape UI is in the works. 
 
-[Deployed to Heroku][http://pic-it.herokuapp.com)
+[Deployed to Heroku](http://pic-it.herokuapp.com)
 
-![PictureIt](./readme_screenshots/01.png)
+<img src="./readme_screenshots/01.png" width="300">
 
 ## Update Plans
 * Reworked UI for Desktop and Landscape mode
