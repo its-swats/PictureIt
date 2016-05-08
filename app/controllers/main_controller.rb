@@ -1,5 +1,6 @@
 class MainController < ApplicationController
 	def index
+		@voted = !!Vote.already_voted?(request.remote_ip)
 		@image = Photo.new
 		@current_image = Photo.last
 	end

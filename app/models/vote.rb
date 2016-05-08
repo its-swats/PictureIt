@@ -9,6 +9,10 @@ class Vote < ActiveRecord::Base
 		end
 	end
 
+	def self.already_voted?(ip)
+		Vote.find_by(ip: ip)
+	end
+
 	def self.clear_votes
 		Vote.delete_all
 	end
