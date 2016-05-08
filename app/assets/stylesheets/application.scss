@@ -40,9 +40,14 @@
 	width: 100%;
 }
 
-#caption_box {
+.no_display {
 	display: none;
 }
+
+.yes_display {
+	display: inline;
+}
+
 
 .keep,
 .kill,
@@ -68,5 +73,5 @@
 
 #picFrame img {
 	max-width: 100%;
-	max-height: 100%
+	max-height: 100%;
 }
