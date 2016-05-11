@@ -16,6 +16,10 @@ PictureIt is currently only designed to work on Phones and Tablets. While it can
 
 <img src="./readme_screenshots/01.png" width="300">
 
+## Known Issues
+* Images are deleted when the Heroku Dyno shuts down
+* Images are not being successfully compressed
+
 ## Update Plans
 * Reworked UI for Desktop and Landscape mode
 * Pictures that automatically expire over time, modified based on up and down votes
@@ -30,6 +34,7 @@ PictureIt is currently only designed to work on Phones and Tablets. While it can
 5. Submit a pull request!
 
 ## History
+5/11/16 - Fixed a crash when launching a server without a stored image
 5/7/16 - Initial release
 
 ## License
