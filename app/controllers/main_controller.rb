@@ -3,8 +3,6 @@ class MainController < ApplicationController
 		@voted = Vote.already_voted?(request.remote_ip)
 		@image = Photo.new
 		@current_image = Photo.last
-		p "*" * 90
-		p @current_image
 	end
 
 	def create

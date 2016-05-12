@@ -34,10 +34,27 @@ class ImageUploader < CarrierWave::Uploader::Base
   #   # do something
   # end
 
-  # Create different versions of your uploaded files:
+  # # Create different versions of your uploaded files:
   # version :thumb do
-  #   process :resize_to_fit => [50, 50]
+  process :resize_to_fit => [800, 800]
   # end
+
+  process :add_text
+  def add_text
+    p "*" * 90
+    
+    p "*" * 90
+    manipulate! do |img|
+      img.combine_options do |c|
+        c.font "#{::Rails.root}/public/fonts/Impact.ttf" 
+        c.pointsize 20
+        c.gravity "North"
+        c.draw "text 0,100 '#{model.caption}'"
+      end 
+    end
+  end
+
+
 
   # Add a white list of extensions which are allowed to be uploaded.
   # For images you might use something like this:
@@ -49,6 +66,19 @@ class ImageUploader < CarrierWave::Uploader::Base
   # Avoid using model.id or version_name here, see uploader/store.rb for details.
   # def filename
   #   "something.jpg" if original_filename
+  # end
+
+  # process :add_text
+  # def add_text
+  #   manipulate! do |image|
+  #     image.combine_options do |c|
+  #       image.gravity 'Center'
+  #       image.pointsize '22'
+  #       image.draw "text 0,0 'test'"
+  #       image.fill 'white'
+  #     end
+  #     image
+  #   end  
   # end
 
 end
