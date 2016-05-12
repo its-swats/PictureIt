@@ -4,8 +4,9 @@
 
 
 $(document).ready(function(){
-	var takePicture = $('#upload_file');
 
+	var takePicture = $('#upload_file');
+	
 	takePicture.change(function(event) {
 		$('#post_button').removeClass('disabled');
 		$('#caption_box').attr('placeholder', 'Caption It!');
@@ -13,17 +14,3 @@ $(document).ready(function(){
 		$('#caption_box').addClass('yes_display');
 	});
 });
-
-
-// function submitPhotoHandler(){
-// 	$('#photoSubmission').submit(function(event){
-// 		event.preventDefault();
-// 		caption = $("input[name='caption'").val();
-// 		photo = $('#upload-file')[0].files[0];
-// 		var response = $.ajax({
-// 			method: 'POST',
-// 			url: '/',
-// 			data: {'caption': caption, 'photo': photo}
-// 		});
-// 	})
-// };

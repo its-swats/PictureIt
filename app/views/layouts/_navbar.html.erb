@@ -5,7 +5,7 @@
 				<%= f.label :image, 'Picture It', {for: 'upload_file', class: "picture btn btn-primary"} %>
 				<%= f.submit :image, {id: 'post_button', class: 'disabled post btn btn-primary', value: 'Post It', data: {disable_with: "Posting It", disabled: true}} %>
 			</div>
-			<%= f.text_field :caption, {id: 'caption_box', class: "#{@current_image ? !!@current_image.caption ? 'yes_display' : 'no_display' : nil} form-control form-control-lg", placeholder: "#{@current_image && @current_image.caption ? @current_image.caption : nil}" }%>
+			<%= f.text_field :caption, {id: 'caption_box', class: "no_display form-control", placeholder: "Caption It!" }%>
 			<%= f.file_field :image, {id: 'upload_file', accept: 'image/*', capture: 'camera'}%>
 		<% end %>
 	</div>
