@@ -41,15 +41,15 @@ class ImageUploader < CarrierWave::Uploader::Base
 
   process :add_text
   def add_text
-    p "*" * 90
-    
-    p "*" * 90
     manipulate! do |img|
       img.combine_options do |c|
         c.font "#{::Rails.root}/public/fonts/Impact.ttf" 
-        c.pointsize 20
+        c.fill '#ffffff'
+        c.stroke 'black'
+        c.strokewidth '1'
+        c.pointsize '25'
         c.gravity "North"
-        c.draw "text 0,100 '#{model.caption}'"
+        c.draw "text 0,150 '#{model.caption}'"
       end 
     end
   end
@@ -66,19 +66,6 @@ class ImageUploader < CarrierWave::Uploader::Base
   # Avoid using model.id or version_name here, see uploader/store.rb for details.
   # def filename
   #   "something.jpg" if original_filename
-  # end
-
-  # process :add_text
-  # def add_text
-  #   manipulate! do |image|
-  #     image.combine_options do |c|
-  #       image.gravity 'Center'
-  #       image.pointsize '22'
-  #       image.draw "text 0,0 'test'"
-  #       image.fill 'white'
-  #     end
-  #     image
-  #   end  
   # end
 
 end
