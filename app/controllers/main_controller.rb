@@ -1,13 +1,11 @@
 class MainController < ApplicationController
-	before_filter :check_for_mobile
+	before_filter :check_for_mobile, :only => index
 
 	def index
 		if @user_agent == :tablet
 			@voted = Vote.already_voted?(request.remote_ip)
 			@image = Photo.new
 			@current_image = Photo.last
-		else
-
 		end
 	end
 
@@ -38,8 +36,7 @@ class MainController < ApplicationController
 	end
 
 	def check_for_mobile
-		# request.user_agent =~ /Mobile|webOS/ ? (request.variant = :tablet) : (request.variant = :desktop)
-		@user_agent =~ /Mobile|webOS/ ? (request.variant = :tablet) : (request.variant = :desktop)
+		request.user_agent =~ /Mobile|webOS/ ? (@user_agent = :tablet) : (@user_agent = :desktop)
 	end
 
 end
