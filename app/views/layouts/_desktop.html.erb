@@ -1,19 +1,47 @@
-<!-- <nav class="navbar navbar-light bg-faded">
-  <div class="nav navbar-nav">
-    <a class="navbar-brand" href="#">PictureIt</a>
-    <a class="nav-item nav-link pull-xs-right" href="#">Current Image</a>
-    <a class='nav-item nav-link pull-xs-right'>
-    <a class="nav-item nav-link pull-xs-right" href="#">About</a>
-  </div>
-</nav> -->
-
-<section class="jumbotron" id="about">
-	<div class="container-fluid">
+<section class="desktop-header bg-info" id="intro">
+	<nav class="navbar navbar-dark bg-inverse">
+	<a class='navbar-brand' href='#'>PictureIt</a>
+	<ul class="nav nav-inline text-align-right">
+			<li class="nav-item">
+				<a class="nav-link" href="#">About</a>
+			</li>
+			<li class="nav-item">
+				<a class="nav-link" href="#">What's Hot</a>
+			</li>
+			<li class="nav-item">
+				<a class="nav-link" href="#">Join the Fun</a>
+			</li>
+			<li class="nav-item">
+				<a class="nav-link" href="#">Source</a>
+			</li>
+		</ul>
+	</nav>
+	<div class="container-fluid desktop-vertical-center">
 		<div class="row">
 			<div class="col-lg-8 col-lg-offset-2">
-				<h2 class="section-heading">Welcome to PictureIt</h2>
-				<hr>
-				<p class=""> </p>
+				<row>
+					<h2 class="section-heading text-center">Welcome to PictureIt</h2>
+					<hr>
+					<p class=""> </p>
+				</row>
+				<row>
+					<div class="card card-inverse card-primary text-xs-center col-md-12 col-lg-5">
+						<div class="card-block">
+							<blockquote class="card-blockquote">
+								<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p>
+								<footer>Someone famous in <cite title="Source Title">Source Title</cite></footer>
+							</blockquote>
+						</div>
+					</div>
+					<div class="card card-inverse card-primary text-xs-center col-md-12 col-lg-5 col-lg-offset-2">
+						<div class="card-block">
+							<blockquote class="card-blockquote">
+								<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p>
+								<footer>Someone famous in <cite title="Source Title">Source Title</cite></footer>
+							</blockquote>
+						</div>
+					</div>
+				</row>
 			</div>
 		</div>
 	</div>
@@ -23,9 +51,9 @@
 	<div class="container-fluid">
 		<div class="row">
 			<div class="col-lg-8 col-lg-offset-2">
-				<h2 class="section-heading">What's hot right now?</h2>
+				<h2 class="section-heading text-center">What's hot right now?</h2>
 				<hr>
-				<%= image_tag(@current_image.image, class: "center-block") %>
+				<%= image_tag(@current_image.image, class: "center-block img-fluid img-rounded") %>
 			</div>
 		</div>
 	</div>

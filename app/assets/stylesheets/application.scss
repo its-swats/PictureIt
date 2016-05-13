@@ -71,3 +71,20 @@ html, body {
 
 }
 
+.text-center {
+	text-align: center;
+}
+
+.text-align-right {
+	text-align: right;
+}
+
+.desktop-header{
+	height: 100vh;
+}
+
+.desktop-vertical-center{
+	position: absolute;
+	top: 50%;
+	transform: translateY(-50%);
+}
