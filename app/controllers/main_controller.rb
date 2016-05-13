@@ -1,7 +1,11 @@
 class MainController < ApplicationController
+	before_filter :check_for_mobile, :only => :index
+
 	def index
-		@voted = Vote.already_voted?(request.remote_ip)
-		@image = Photo.new
+		if @user_agent == :tablet
+			@voted = Vote.already_voted?(request.remote_ip)
+			@image = Photo.new
+		end
 		@current_image = Photo.last
 	end
 
@@ -30,6 +34,11 @@ class MainController < ApplicationController
 	def photo_params
 		params.require(:photo).permit(:caption, :image)
 	end
+
+	def check_for_mobile
+		request.user_agent =~ /Mobile|webOS/ ? (@user_agent = :tablet) : (@user_agent = :desktop)
+	end
+
 end
 
 
