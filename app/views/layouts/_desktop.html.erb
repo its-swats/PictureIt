@@ -1,1 +1,32 @@
-<p>this is the desktop layout</p>
+<!-- <nav class="navbar navbar-light bg-faded">
+  <div class="nav navbar-nav">
+    <a class="navbar-brand" href="#">PictureIt</a>
+    <a class="nav-item nav-link pull-xs-right" href="#">Current Image</a>
+    <a class='nav-item nav-link pull-xs-right'>
+    <a class="nav-item nav-link pull-xs-right" href="#">About</a>
+  </div>
+</nav> -->
+
+<section class="jumbotron" id="about">
+	<div class="container-fluid">
+		<div class="row">
+			<div class="col-lg-8 col-lg-offset-2">
+				<h2 class="section-heading">Welcome to PictureIt</h2>
+				<hr>
+				<p class=""> </p>
+			</div>
+		</div>
+	</div>
+</section>
+
+<section class="jumbotron" id="about">
+	<div class="container-fluid">
+		<div class="row">
+			<div class="col-lg-8 col-lg-offset-2">
+				<h2 class="section-heading">What's hot right now?</h2>
+				<hr>
+				<%= image_tag(@current_image.image, class: "center-block") %>
+			</div>
+		</div>
+	</div>
+</section>

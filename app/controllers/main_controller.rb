@@ -1,12 +1,12 @@
 class MainController < ApplicationController
-	before_filter :check_for_mobile, :only => index
+	before_filter :check_for_mobile, :only => :index
 
 	def index
 		if @user_agent == :tablet
 			@voted = Vote.already_voted?(request.remote_ip)
 			@image = Photo.new
-			@current_image = Photo.last
 		end
+		@current_image = Photo.last
 	end
 
 	def create
