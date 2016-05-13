@@ -9,16 +9,17 @@
 </head>
 <body>
 
-
+<% if @user_agent == :tablet %>
 	<div class='row'>	
 		<%= render 'layouts/navbar' %>
 	</div>
-<!-- 	<div class='row'> -->
 		<%= render 'layouts/picframe' %>
-	<!-- </div> -->
 	<div class='row'>
 		<%= render 'layouts/footer' %>
 	</div>
+<% else %>
+	<%= render 'layouts/desktop' %>
+<% end %>
 
 
 </body>
