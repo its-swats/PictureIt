@@ -10,11 +10,10 @@ class MainController < ApplicationController
 	end
 
 	def create
-		@photo = Photo.new(photo_params)	
-		@photo.ip = request.remote_ip
-		if params[:photo][:image]
-			@photo.caption = nil if @photo.caption == ""
-			Vote.clear_votes if @photo.save
+		if Photo.last && Photo.last.is_protected?
+			handle_protected_photo
+		else
+			create_new_photo
 		end
 		redirect_to '/'
 	end
@@ -38,6 +37,21 @@ class MainController < ApplicationController
 	def check_for_mobile
 		request.user_agent =~ /Mobile|webOS/ ? (@user_agent = :tablet) : (@user_agent = :desktop)
 	end
+
+	def create_new_photo
+		@photo = Photo.new(photo_params)	
+		if params[:photo][:image]
+			@photo.ip = request.remote_ip
+			@photo.caption = nil if @photo.caption == ""
+			Vote.clear_votes if @photo.save
+		end
+	end
+
+	def handle_protected_photo
+		@error = 'Current Photo is Protected'
+		Photo.last.increment!(:uploads_against)
+	end
+
 
 end
 
