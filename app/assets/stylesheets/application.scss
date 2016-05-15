@@ -88,3 +88,31 @@ html, body {
 	top: 50%;
 	transform: translateY(-50%);
 }
+
+
+.info-box-right {
+	border-left: 1px dotted #5BC0DE;
+}
+
+.demo-screenshot {
+	max-height: 400px;
+}
+
+#join {
+	padding-top: 5em;
+	padding-bottom: 5em;
+}
+
+#hot {
+	padding-top: 1em;
+	padding-bottom: 1em;	
+}
+
+#source {
+	padding-top: 5em;
+	padding-bottom: 5em;
+}
+
+.debug {
+	outline: 2px solid black;
+}
