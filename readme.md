@@ -1,5 +1,5 @@
 # PictureIt
-Upload pictures to PictureIt directly from your phone's browser for all users to see. Pictures last only until the next picture is uploaded. 
+PictureIt is all about sharing what is happening right now! You can only upload pictures taken with your phone or tablet's camera, and old pictures are replaced upon the submission of a new picture.
 
 ## Installation
 ```
@@ -10,7 +10,6 @@ Upload pictures to PictureIt directly from your phone's browser for all users to
 > open http://localhost:3000
 ```
 ##Usage
-PictureIt is currently only designed to work on Phones and Tablets. While it can be accessed on desktop, the UI does not yet support it and the experience will be suboptimal. A full fledged desktop and landscape UI is in the works. 
 
 [Deployed to Heroku](http://pic-it.herokuapp.com)
 
@@ -18,13 +17,18 @@ PictureIt is currently only designed to work on Phones and Tablets. While it can
 
 ## Known Issues
 * Images are deleted when the Heroku Dyno shuts down
+* UI does not look great in Landscape mode
 
 
 ## Update Plans
-* Reworked UI for Desktop and Landscape mode
-* Pictures that automatically expire over time, modified based on up and down votes
-* Better image scaling
-* Better handling of captions
+* Reworked UI for Landscape mode and larger tablets
+* Grant pictures protection/'lives' based on Keep/Kill vote ratio
+
+## Technologies Used
+* CarrierWave for Image Uploading
+* MiniMagick for Image Compression and Captioning
+* Ruby, Rails, postgres, and Javascript+jQuery
+* Bootstrap v4 Alpha for UI
 
 ## Contributing
 1. Fork it!
@@ -34,6 +38,7 @@ PictureIt is currently only designed to work on Phones and Tablets. While it can
 5. Submit a pull request!
 
 ## History
+* 5/14/16 - Desktop UI Information page is now live, and made a few UI tweaks
 * 5/12/16 - Images are now compressed on upload, and caption text is placed on the image itself
 * 5/11/16 - Fixed issue with crashing on launch when no records exist
 * 5/7/16 - Initial release
