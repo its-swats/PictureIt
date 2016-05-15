@@ -1,7 +1,7 @@
 <section class="desktop-header bg-info" id="about">
 	<nav class="navbar navbar-dark bg-inverse">
-	<a class='navbar-brand'>PictureIt</a>
-	<ul class="nav nav-inline text-align-right">
+		<a class='navbar-brand'>PictureIt</a>
+		<ul class="nav nav-inline text-align-right">
 			<li class="nav-item">
 				<a class="nav-link" href="#about">About</a>
 			</li>
@@ -16,32 +16,26 @@
 			</li>
 		</ul>
 	</nav>
-	<div class="container-fluid desktop-vertical-center">
+
+	<div class="container-fluid desktop-vertical-center col-xs-12 col-lg-8 col-lg-offset-2">
 		<div class="row">
-			<div class="col-lg-8 col-lg-offset-2">
-				<row>
-					<h2 class="section-heading text-center">Welcome to PictureIt</h2>
-					<hr>
-					<p class=""> </p>
-				</row>
-				<row>
-					<div class="card card-inverse card-primary text-xs-center col-md-12 col-lg-5">
-						<div class="card-block">
-							<blockquote class="card-blockquote">
-								<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p>
-								<footer>Someone famous in <cite title="Source Title">Source Title</cite></footer>
-							</blockquote>
+			<h2 class="section-heading text-center">Welcome to PictureIt</h2>
+			<hr>
+		</div>
+		<div class='row'>
+			<div class="card card-inverse card-primary text-xs-center">
+				<div class="card-block">
+					<blockquote class="card-blockquote">
+						<div class='row'>
+							<div class='col-lg-8 info-box-left'>
+							<p>PictureIt is a image sharing service where users can upload pictures taken with their phone or tablet's camera. Old pictures are immediately replaced upon the submission of a new picture.</p>
+							</div>
+							<div class='col-lg-4'>
+
+							</div>
 						</div>
-					</div>
-					<div class="card card-inverse card-primary text-xs-center col-md-12 col-lg-5 col-lg-offset-2">
-						<div class="card-block">
-							<blockquote class="card-blockquote">
-								<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p>
-								<footer>Someone famous in <cite title="Source Title">Source Title</cite></footer>
-							</blockquote>
-						</div>
-					</div>
-				</row>
+					</blockquote>
+				</div>
 			</div>
 		</div>
 	</div>
@@ -50,7 +44,7 @@
 <section class="jumbotron" id="hot">
 	<div class="container-fluid">
 		<div class="row">
-			<div class="col-lg-8 col-lg-offset-2">
+			<div class="col-sm-8 col-lg-offset-2">
 				<h2 class="section-heading text-center">What's hot right now?</h2>
 				<hr>
 				<%= image_tag(@current_image.image, class: "center-block img-fluid img-rounded") %>
@@ -82,8 +76,8 @@
 		</div>
 	</div>
 	<nav class="navbar navbar-dark bg-inverse">
-	<a class='navbar-brand'>PictureIt</a>
-	<ul class="nav nav-inline text-align-right">
+		<a class='navbar-brand'>PictureIt</a>
+		<ul class="nav nav-inline text-align-right">
 			<li class="nav-item">
 				<a class="nav-link" href="#about">About</a>
 			</li>
