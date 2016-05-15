@@ -1,9 +1,22 @@
 require 'rails_helper'
 
 RSpec.describe MainController, type: :controller do
-	
+	describe '#index' do
+		it 'detects a user on mobile' do
+			@request.headers['HTTP_USER_AGENT'] = "Mobile|WebOS"
+			get :index
+			expect(controller.instance_variable_get('@user_agent')).to eq(:tablet)
+		end
+
+		it 'detects a user on desktop' do
+			@request.headers['HTTP_USER_AGENT'] = 'anything else'
+			get :index
+			expect(controller.instance_variable_get('@user_agent')).to eq(:desktop)
+		end
+	end
+
+
 	describe '#create' do
-		include CarrierWave::Test::Matchers
 		let(:test_photo){FactoryGirl.create(:photo)}
 		let(:uploader){ImageUploader.new(test_photo, :image)}
 		let(:upvote){FactoryGirl.create(:keep)}
