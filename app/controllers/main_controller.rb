@@ -52,7 +52,6 @@ class MainController < ApplicationController
 	def handle_protected_photo
 		Photo.last.increment!(:uploads_against)
 		flash[:errors] = "Failed to upload - the current photo is protected! It can be replaced after #{Photo.last.protection_left} more upload attempts or kills!"
-		# redirect '/', error: "Failed to upload - the current photo is protected! It can be replaced after #{Photo.last.protection_left} more upload attempts or kills!"
 	end
 end
 
