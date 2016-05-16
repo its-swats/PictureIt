@@ -116,3 +116,11 @@ html, body {
 .debug {
 	outline: 2px solid black;
 }
+
+.error-box {
+	width: 90%;
+	position: absolute;
+	left: 5%;
+	top: 50%;
+	transform: translateY(-50%);
+}
