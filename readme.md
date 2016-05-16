@@ -21,8 +21,12 @@ PictureIt is all about sharing what is happening right now! You can only upload 
 
 
 ## Update Plans
-* Reworked UI for Landscape mode and larger tablets
-* Grant pictures protection/'lives' based on Keep/Kill vote ratio
+* Rework UI for Landscape mode and larger tablets
+* ~~Add Test Suite~~
+* ~~Grant pictures protection/'lives' based on Keep/Kill vote ratio~~
+* ~~Reworked UI for Desktop~~
+* ~~Better image scaling~~
+* ~~Better handling of captions~~
 
 ## Technologies Used
 * CarrierWave for Image Uploading
@@ -38,6 +42,7 @@ PictureIt is all about sharing what is happening right now! You can only upload 
 5. Submit a pull request!
 
 ## History
+* 5/15/16 - Votes matter! Pictures cannot be replaced until Kills + Upload Attempts > Keeps. Also added tests, and error handling through modals for when an image cannot be uploaded. 
 * 5/14/16 - Desktop UI Information page is now live, and made a few UI tweaks
 * 5/12/16 - Images are now compressed on upload, and caption text is placed on the image itself
 * 5/11/16 - Fixed issue with crashing on launch when no records exist
