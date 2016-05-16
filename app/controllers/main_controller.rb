@@ -5,6 +5,7 @@ class MainController < ApplicationController
 		if @user_agent == :tablet
 			@voted = Vote.already_voted?(request.remote_ip)
 			@image = Photo.new
+			@error = params['error'] if params['error']
 		end
 		@current_image = Photo.last
 	end
@@ -45,14 +46,14 @@ class MainController < ApplicationController
 			@photo.caption = nil if @photo.caption == ""
 			Vote.clear_votes if @photo.save
 		end
+		
 	end
 
 	def handle_protected_photo
-		@error = 'Current Photo is Protected'
 		Photo.last.increment!(:uploads_against)
+		flash[:errors] = "Failed to upload - the current photo is protected! It can be replaced after #{Photo.last.protection_left} more upload attempts or kills!"
+		# redirect '/', error: "Failed to upload - the current photo is protected! It can be replaced after #{Photo.last.protection_left} more upload attempts or kills!"
 	end
-
-
 end
 
 
